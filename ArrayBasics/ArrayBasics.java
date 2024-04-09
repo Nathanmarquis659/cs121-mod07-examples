@@ -5,7 +5,7 @@ import java.util.Random;
  * and outputting the data.
  * 
  * @author mvail
- */
+ */ 
 public class ArrayBasics {
 
 	/**
