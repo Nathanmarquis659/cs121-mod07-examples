@@ -6,24 +6,28 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch Current File",
+            "name": "CommandLineEcho",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "CommandLineEcho",
+            "projectName": "CommandLineArguments_f25b8f81"
         },
         {
             "type": "java",
             "name": "Launch CommandLineEcho",
             "request": "launch",
             "mainClass": "CommandLineEcho",
-            "args": ["hello", "world"],
+            "args": [
+                "hello",
+                "world"
+            ],
             "projectName": "CommandLineArguments_e0f2b6bd"
         },
         {
             "type": "java",
-            "name": "Launch CommandLineValidation",
+            "name": "CommandLineValidation",
             "request": "launch",
             "mainClass": "CommandLineValidation",
-            "projectName": "CommandLineArguments_e0f2b6bd"
+            "projectName": "CommandLineArguments_f25b8f81"
         }
     ]
 }

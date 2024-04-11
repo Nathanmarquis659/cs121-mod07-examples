@@ -74,6 +74,6 @@ public class Grade implements Comparable<Grade>
     * @return Result of comparison between the two objects
     */
    public int compareTo(Grade arg0) {
-      return this.lowerBound - arg0.lowerBound;
+      return arg0.lowerBound - this.lowerBound;
    }
 }

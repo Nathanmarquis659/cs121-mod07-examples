@@ -13,6 +13,7 @@ public class ArrayPassing
 	 */
 	private static void changeArray(int[] a)
 	{
+		System.out.println("The reference value passed to changeArray is: " + a);
 		for (int i = 0; i<a.length; i++)
 			a[i] = 2*a[i];
 	}
@@ -23,6 +24,7 @@ public class ArrayPassing
 	public static void main(String[] args)
 	{
 		int[] X = new int[5];
+		System.out.println("The reference value stored in X is: " + X);
 
 		for (int i = 0; i<X.length; i++)
 			X[i] = i+1;

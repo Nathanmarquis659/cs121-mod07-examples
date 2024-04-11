@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Demonstrates the use of an array of objects.
  * @author Java Foundations
@@ -17,6 +19,12 @@ public class GradeRange
          new Grade("A-", 90), new Grade("B-", 80), new Grade("C-", 70), new Grade("D-", 60)
       };
 
+      for (Grade letterGrade : grades)
+         System.out.println(letterGrade);
+
+      Arrays.sort(grades);
+
+      System.out.print("\n*\n* Sorted in ascending order\n*\n");
       for (Grade letterGrade : grades)
          System.out.println(letterGrade);
    }
