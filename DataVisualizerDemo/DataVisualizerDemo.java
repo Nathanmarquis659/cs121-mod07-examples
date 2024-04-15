@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.util.Random;
 
 /**
  * Demonstration of how to implement the HindmanVisualizer interface 
@@ -18,7 +19,7 @@ public class DataVisualizerDemo implements HindmanVisualizer {
     public DataVisualizerDemo() {
         this.simData = new int[DISPLAY_HEIGHT][DISPLAY_WIDTH];
 
-        generateVerticalLines();
+        generateHorizontalLines();
 
     }
 
@@ -38,12 +39,37 @@ public class DataVisualizerDemo implements HindmanVisualizer {
         }
     }
 
+    private void generateHorizontalLines() {
+        int numRows = DISPLAY_HEIGHT;
+        int numCols = DISPLAY_WIDTH;
+    
+        Random numberGenerator = new Random();
+    
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < numCols; col++) {
+                if (row % 8 == 1) {
+                    simData[row - 1][col] = numberGenerator.nextInt(MAX_VALUE)/2;
+                    simData[row][col] = numberGenerator.nextInt(MAX_VALUE);
+                    simData[row + 1][col] = numberGenerator.nextInt(MAX_VALUE)/2;
+                }
+            }
+        }
+    }
+
     /* Interface methods */
     @Override
     public Color[] getColorPalette() {
-        /* Leaving this set to null uses the default
-         *   gray scale palette built into the visualizer */
-        return null;
+        Color[] palette = new Color[MAX_VALUE];
+        Random numberGenerator = new Random();
+   
+        for (int x = 0; x < palette.length; x++) {
+            int red = numberGenerator.nextInt(256);
+            int green = numberGenerator.nextInt(256);
+            int blue = numberGenerator.nextInt(256);
+            palette[x] = new Color(red,green,blue );
+        }
+   
+        return palette;
     }
 
     @Override
